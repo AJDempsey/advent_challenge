@@ -34,7 +34,7 @@ class TestChallenge1Methods(unittest.TestCase):
         """
         candidate = challenge1.get_data("data/test1.txt") # Better way to do this?
         result = ["+30", "+30", "-18"]
-        self.assertListEqual(candidate, result, "Values loaded from the file do not match the expected values")
+        self.assertListEqual(result, candidate, "Values loaded from the file do not match the expected values")
 
 if __name__ == "__main__":
     unittest.main()
