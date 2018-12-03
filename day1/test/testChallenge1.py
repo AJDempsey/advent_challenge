@@ -28,5 +28,13 @@ class TestChallenge1Methods(unittest.TestCase):
         result = 42
         self.assertEqual(result, challenge1.find_final_frequency(values), "Frequency counting failed")
 
+    def test_get_data(self):
+        """
+        Test the ability to marshall data from a file to a list
+        """
+        candidate = challenge1.get_data("data/test1.txt") # Better way to do this?
+        result = ["+30", "+30", "-18"]
+        self.assertListEqual(candidate, result, "Values loaded from the file do not match the expected values")
+
 if __name__ == "__main__":
     unittest.main()
