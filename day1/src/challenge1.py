@@ -1,5 +1,8 @@
 #! /usr/bin/env python3
 
+import sys
+import os
+
 def add_to_frequency(current, value):
     return current + int(value)
 
@@ -19,4 +22,12 @@ def get_data(path):
     return values
 
 if __name__ == "__main__":
-    print("Hello, world")
+    if len(sys.argv) != 2:
+        print("Need a path to a file to read")
+        exit(-1)
+    file_path = sys.argv[1]
+    if not os.path.exists(file_path):
+        print("File doesn't exist, check the command")
+    values = get_data(file_path)
+    freq = find_final_frequency(values)
+    print("Frequency is: ", freq)
