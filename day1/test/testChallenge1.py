@@ -14,5 +14,14 @@ class TestChallenge1Methods(unittest.TestCase):
         value = "+300"
         self.assertEqual(result, challenge1.add_to_frequency(current, value), "Values don't match")
 
+    def test_minus_string_from_total(self):
+        """
+        Test that function that updates the total works correctly
+        """
+        result = 100
+        current = 120
+        value = "-20"
+        self.assertEqual(result, challenge1.add_to_frequency(current, value), "Values don't match")
+
 if __name__ == "__main__":
     unittest.main()
